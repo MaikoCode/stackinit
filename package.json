@@ -1,0 +1,27 @@
+{
+  "name": "stackinit-workspace",
+  "private": true,
+  "packageManager": "pnpm@10.30.3",
+  "scripts": {
+    "build": "turbo run build",
+    "clean:artifacts": "node ./scripts/clean-artifacts.mjs",
+    "pack:cli": "pnpm build && pnpm --dir packages/cli pack:local",
+    "smoke:next-auth": "pnpm build && node ./scripts/smoke-test.mjs next-auth",
+    "smoke:next-mongo": "pnpm build && node ./scripts/smoke-test.mjs next-mongo",
+    "smoke:next-convex": "pnpm build && node ./scripts/smoke-test.mjs next-convex",
+    "smoke:turbo": "pnpm build && node ./scripts/smoke-test.mjs turbo-basic",
+    "smoke:turbo-auth": "pnpm build && node ./scripts/smoke-test.mjs turbo-auth",
+    "smoke:turbo-mongo": "pnpm build && node ./scripts/smoke-test.mjs turbo-mongo",
+    "smoke:turbo-convex": "pnpm build && node ./scripts/smoke-test.mjs turbo-convex",
+    "smoke:all": "pnpm smoke:next-auth && pnpm smoke:next-mongo && pnpm smoke:next-convex && pnpm smoke:turbo && pnpm smoke:turbo-auth && pnpm smoke:turbo-mongo && pnpm smoke:turbo-convex",
+    "typecheck": "turbo run typecheck",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.3",
+    "tsup": "^8.5.1",
+    "turbo": "^2.8.12",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  }
+}

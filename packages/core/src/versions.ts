@@ -1,0 +1,21 @@
+export const TOOL_VERSIONS = {
+  next: "^16.1.6",
+  react: "^19.2.4",
+  reactDom: "^19.2.4",
+  tailwindcss: "^4.2.1",
+  tailwindPostcss: "^4.2.1",
+  typescript: "^5.9.3",
+  eslint: "^9.39.3",
+  eslintConfigNext: "^16.1.6",
+  eslintRc: "^3.3.4",
+  typesNode: "^25.3.3",
+  typesReact: "^19.2.14",
+  typesReactDom: "^19.2.3",
+  turbo: "^2.8.12",
+  clsx: "^2.1.1",
+  tailwindMerge: "^3.5.0",
+  prisma: "^7.4.2",
+  prismaClient: "^7.4.2",
+  convex: "^1.32.0",
+  betterAuth: "^1.5.0"
+} as const;
