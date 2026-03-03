@@ -87,6 +87,18 @@ Run both:
 pnpm smoke:all
 ```
 
+Run the full matrix without dependency installs or builds inside generated apps:
+
+```powershell
+pnpm smoke:all:fast
+```
+
+Run a direct ad hoc structure-only smoke check:
+
+```powershell
+node .\scripts\smoke-test.mjs next-auth --skip-install
+```
+
 Each smoke test:
 
 - builds the CLI
@@ -101,6 +113,12 @@ Build and pack the CLI:
 
 ```powershell
 pnpm pack:cli
+```
+
+Smoke-test the packed tarball end to end:
+
+```powershell
+pnpm smoke:tarball
 ```
 
 This writes a tarball inside [packages/cli](/C:/Users/Maikoke/Desktop/stackinit/packages/cli).
@@ -126,3 +144,4 @@ npx C:\Users\Maikoke\Desktop\stackinit\packages\cli\stackinit-0.1.0.tgz my-app
 - Better Auth is intentionally limited to Prisma-backed projects in v1.
 - The generated Prisma projects may still require you to run your normal Prisma/Better Auth generation steps after scaffolding.
 - The CLI package now bundles the core engine and copies template assets into the published `dist` folder so local tarball testing matches npm behavior.
+- The smoke runner accepts `--skip-install` for fast file-generation checks and `--source tarball` to execute the packed npm tarball instead of the local `dist` entrypoint.

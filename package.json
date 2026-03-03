@@ -13,6 +13,8 @@
     "smoke:turbo-auth": "pnpm build && node ./scripts/smoke-test.mjs turbo-auth",
     "smoke:turbo-mongo": "pnpm build && node ./scripts/smoke-test.mjs turbo-mongo",
     "smoke:turbo-convex": "pnpm build && node ./scripts/smoke-test.mjs turbo-convex",
+    "smoke:all:fast": "pnpm build && node ./scripts/smoke-test.mjs next-auth --skip-install && node ./scripts/smoke-test.mjs next-mongo --skip-install && node ./scripts/smoke-test.mjs next-convex --skip-install && node ./scripts/smoke-test.mjs turbo-basic --skip-install && node ./scripts/smoke-test.mjs turbo-auth --skip-install && node ./scripts/smoke-test.mjs turbo-mongo --skip-install && node ./scripts/smoke-test.mjs turbo-convex --skip-install",
+    "smoke:tarball": "pnpm pack:cli && node ./scripts/smoke-test.mjs next-auth --source tarball",
     "smoke:all": "pnpm smoke:next-auth && pnpm smoke:next-mongo && pnpm smoke:next-convex && pnpm smoke:turbo && pnpm smoke:turbo-auth && pnpm smoke:turbo-mongo && pnpm smoke:turbo-convex",
     "typecheck": "turbo run typecheck",
     "test": "vitest run"
